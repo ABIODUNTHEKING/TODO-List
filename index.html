@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/69934e4cc4.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <title>Todo App</title>
+</head>
+<body onload="taskStructure()">
+    <main>
+        <h1>Todo List</h1>
+        <section>     
+            <form class="info" id="form">
+                <input type="text" placeholder="Add your new task" class="newTask" id="newTask">
+                <button class="addButton" id="addButton"><i class="fas fa-plus"></i></button>
+            </form>
+            <div class="list" id="list">
+                
+            </div>
+        </section>
+        <p>You have 3 undone tasks <button>Clear All</button></p>
+    </main>
+</body>
+</html>
