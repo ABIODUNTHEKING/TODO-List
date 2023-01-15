@@ -10,19 +10,22 @@
     <script src="script.js" defer></script>
     <title>Todo App</title>
 </head>
-<body onload="taskStructure()">
+<body>
     <main>
-        <h1>Todo List</h1>
-        <section>     
-            <form class="info" id="form">
-                <input type="text" placeholder="Add your new task" class="newTask" id="newTask">
+        
+        <section class="userInput" id="userInput">  
+            <h1>Todo List</h1>   
+            <form class="form" id="form">
+                <input type="text" placeholder="Add your new task" class="task-input" id="task-input">
                 <button class="addButton" id="addButton"><i class="fas fa-plus"></i></button>
-            </form>
-            <div class="list" id="list">
-                
+            </form>  
+            
+        </section>
+        <section class="userTask">
+            <div class="todo-div" id="todo-div">
+            
             </div>
         </section>
-        <p>You have 3 undone tasks <button>Clear All</button></p>
     </main>
 </body>
 </html>
