@@ -53,7 +53,7 @@ form.reset()
 
 
 function deleteTask(){
-    
+    newTask()
 }
 
 
