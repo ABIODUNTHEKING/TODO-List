@@ -5,12 +5,17 @@ let todoListContainer = document.getElementById("todo-div");
 let form = document.getElementById('form')
 let userRequest = document.getElementById('userInput')
 
-
 //EVENTLISTENER
 addButton.addEventListener('click', newTask)
 // addButton.addEventListener('submit', saveTask)
 
+//UL
+let lisetdItem = document.createElement('ul')
+lisetdItem.classList.add('lisetdItem')
 
+//LI
+let task = document.createElement('li')
+task.classList.add('task')
 
 //FUNCTIONS
 function newTask(e){
@@ -18,13 +23,7 @@ function newTask(e){
 
     //Creating of the new HTML elements for the todo list container
 
-    //UL
-    let lisetdItem = document.createElement('ul')
-    lisetdItem.classList.add('lisetdItem')
 
-    //LI
-    let task = document.createElement('li')
-    task.classList.add('task')
 
     //SPAN
     let buttonCollection = document.createElement('span')
@@ -34,29 +33,7 @@ function newTask(e){
     doneButton.classList.add('done-button')
     doneButton.innerHTML = '<i class="fa-solid fa-square-check"></i>'
     doneButton.setAttribute("onclick", "done()")
-  
-    //Structure the elements
-    //todoListContainer = JSON.parse(localStorage.getItem('task'))
-    if(localStorage.getItem('task') != null){
-        todoListContainer.clear()
-        let setOfTask = JSON.parse(localStorage.getItem('task'))
 
-        setOfTask.forEach(element => {
-            todoListContainer.append(lisetdItem)
-            lisetdItem.append(task)
-            task.innerText = inputTask.value
-            task.append(buttonCollection)
-            buttonCollection.append(doneButton)
-            todoListContainer.append(element)
-        });
-    }
-
-    todoListContainer.append(lisetdItem)
-    lisetdItem.append(task)
-    task.innerText = inputTask.value
-    task.append(buttonCollection)
-    buttonCollection.append(doneButton)
- 
 
     if(inputTask.value == ""){   
         lisetdItem.remove() 
@@ -70,12 +47,8 @@ function newTask(e){
 
 
 function saveTask(){
-    
-   
-
+    let setOfTask = []
     if(localStorage.getItem('task') == null){
-            
-        let setOfTask = []
         let task = inputTask.value
         setOfTask.push(task)
         localStorage.setItem('task', JSON.stringify(setOfTask))
@@ -84,14 +57,25 @@ function saveTask(){
       }
 
     else{
-    
-       let setOfTask = JSON.parse(localStorage.getItem('task'))
+        setOfTask = JSON.parse(localStorage.getItem('task'))
        //console.log(setOfTask)
        let task = inputTask.value
        setOfTask.push(task)
        localStorage.setItem('task', JSON.stringify(setOfTask))
+
+       setOfTask.forEach(element => {
+        todoListContainer.append(lisetdItem)
+        lisetdItem.append(task)
+        task.innerText = element
+        task.append(buttonCollection)
+        buttonCollection.append(doneButton)
+    });
     }
+
+
     
+    
+
     //newTask()
 }
 
@@ -104,8 +88,5 @@ function deleteTask(e){
     }
     
 }
-
-
-
 
 
