@@ -1,0 +1,136 @@
+/*GENERAL SELECTOR
+------------------------------------*/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(#68eacc, #497be8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  max-width: 30rem;
+  width: 90%;
+}
+.userInput {
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+.task-input {
+  padding: 10px 2px 6px 5px;
+  flex-grow: 1;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.addButton {
+  background-color: #497be8;
+  border: 0;
+  padding: 10px 15px;
+}
+
+.userTask {
+  margin-top: 20px;
+}
+
+.button-collection {
+  margin-bottom: 10px;
+}
+
+.tab-button {
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.icon{
+   
+}
+
+.active-button {
+  background-color: #497be8;
+  color: white;
+}
+
+.block{
+    display: inline-block;
+}
+
+.none{
+    display: none;
+}
+
+.todo-container {
+  height: 70vh;
+  overflow: auto;
+}
+
+.todo-container::-webkit-scrollbar {
+  display: none;
+}
+
+.task {
+  list-style: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.322);
+  padding: 20px;
+  align-items: center;
+}
+
+.done-button,
+.trash-button {
+  padding: 0.1em 0.2em;
+  border: 0;
+  text-align: center;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.trash-button {
+  background-color: rgba(255, 0, 0, 0.726);
+  color: white;
+}
+
+svg {
+  background-color: purple;
+}
+
+.done-button {
+  background-color: rgba(0, 128, 0, 0.733);
+}
+
+.no-task{
+    display: block;
+    text-align: center;
+    margin-top: 45%;
+}
